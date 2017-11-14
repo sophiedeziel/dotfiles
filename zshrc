@@ -3,7 +3,7 @@ export ZSH=/Users/sdeziel/.oh-my-zsh
 
 ZSH_THEME="doubleend"
 
-plugins=(git ruby)
+plugins=(git ruby dotenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,3 +47,8 @@ source ~/.bash/path-stuff.sh
 source ~/.secrets
 
 source ~/.bash/aliases.sh
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+add-zsh-hook precmd source_env # to load on new tab too

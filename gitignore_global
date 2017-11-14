@@ -1,7 +1,10 @@
 .hgignore
 .idea
+.env
 .DS_Store
 .rvmrc
+.tool-versions
+.zsh_config
 rerun.txt
 dump.rdb
 test-commands
