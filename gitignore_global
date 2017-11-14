@@ -1,0 +1,7 @@
+.hgignore
+.idea
+.DS_Store
+.rvmrc
+rerun.txt
+dump.rdb
+test-commands
