@@ -42,6 +42,8 @@ aheadof() {
 
 export GPG_TTY=$(tty)
 
+source ~/.bash/path-stuff.sh
+
 source ~/.secrets
-source ~/.path-stuff
-source ~/.aliases
+
+source ~/.bash/aliases.sh
