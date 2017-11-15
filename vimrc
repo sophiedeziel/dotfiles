@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 " Dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
+Plug 'xolox/vim-misc'
 
 " File browsing and search
 Plug 'scrooloose/nerdtree'
@@ -22,6 +23,7 @@ Plug 'rking/ag.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
+Plug 'xolox/vim-colorscheme-switcher'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mtth/scratch.vim'
 Plug 'honza/vim-snippets'
@@ -59,6 +61,7 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 call plug#end()              " required
+" To install the plugins, load this file and run :PlugInstall
 
 set nocompatible
 if has("autocmd")
@@ -473,8 +476,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 
 " COLORS
-colorscheme sexy-railscasts
+colorscheme molokai
 
 set cursorline        " highlight current line
 set cursorcolumn      " highlight current column
-hi CursorColumn guibg=#303030
