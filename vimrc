@@ -480,3 +480,4 @@ colorscheme molokai
 
 set cursorline        " highlight current line
 set cursorcolumn      " highlight current column
+set noballooneval

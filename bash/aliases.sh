@@ -1,6 +1,7 @@
 alias pair_with_rachel='git commit --author="Super Dev Girls (R + S) <express+rcarvalho+sdeziel@acquisio.com>"'
 alias pair_with_eric='git commit --author="Eric + Sophie <express+emarchese+sdeziel@acquisio.com>"'
 alias clean_up_branches='git branch | grep -v "master" | xargs git branch -D'
+alias express='cd ~/dev/express'
 
 alias git=hub
 alias beg="bundle exec guard"
