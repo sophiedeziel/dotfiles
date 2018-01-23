@@ -7,7 +7,7 @@ You only need git to clone the repository. You'll need Ruby and the Rake gem to 
 ## Installation
 
 ```
-git clone git@github.com:sophiedeziel/dotfiles.git ~/.dotfiles # Just cloning
+git clone https://github.com/sophiedeziel/dotfiles.git ~/.dotfiles # Just cloning
 cd ~/.dotfiles; rake                                           # Automatically create the symlinks
 ```
 
