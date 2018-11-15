@@ -25,10 +25,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'mtth/scratch.vim'
-Plug 'honza/vim-snippets'
 Plug 'djoshea/vim-autoread'
-Plug 'garbas/vim-snipmate'
 
 " languages
 Plug 'wavded/vim-stylus'
@@ -51,9 +48,8 @@ Plug 'danchoi/ruby_bashrockets.vim'
 " code formating and manipulation
 Plug 'tsaleh/vim-align'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tomtom/tcomment_vim'
+"Plug 'tpope/vim-surround'
+"Plug 'tomtom/tcomment_vim'
 
 " Git
 Plug 'xuyuanp/nerdtree-git-plugin'
@@ -481,3 +477,6 @@ colorscheme molokai
 set cursorline        " highlight current line
 set cursorcolumn      " highlight current column
 set noballooneval
+set balloondelay=100000
+setlocal balloonexpr=
+let g:netrw_nobeval = 1

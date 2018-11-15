@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='mvim -f'
 fi
 
 current_branch_name () {
@@ -24,6 +24,7 @@ current_branch_number () {
 
 # thefuck
 eval "$(thefuck --alias)"
+alias sti='thefuck'
 
 aheadof() {
   default_remote='production'
@@ -52,3 +53,12 @@ source ~/.bash/aliases.sh
 . $HOME/.asdf/completions/asdf.bash
 
 add-zsh-hook precmd source_env # to load on new tab too
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
