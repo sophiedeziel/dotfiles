@@ -1,5 +1,5 @@
 cd ~/.dotfiles
-if git fetch origin master && [ `git rev-list HEAD...origin/master --count` != 0 ]
+if git fetch origin master --quiet && [ `git rev-list HEAD...origin/master --count` != 0 ]
 then
   echo "[Dotfiles] Would you like to update? [Y/n]: \c"
   read line
@@ -8,4 +8,6 @@ then
   else
   fi
 fi
+
+cd -
 
