@@ -6,6 +6,8 @@ You only need git to clone the repository. You'll need Ruby and the Rake gem to 
 
 ## Installation
 
+For the symlinks part, Ruby with the Rake gem is needed
+
 ```
 git clone https://github.com/sophiedeziel/dotfiles.git ~/.dotfiles # Just cloning
 cd ~/.dotfiles; rake                                           # Automatically create the symlinks
