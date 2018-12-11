@@ -15,3 +15,5 @@ cd ~/.dotfiles; rake                                           # Automatically c
 
 If a file already exists, you will be prompted. Existing symlinks will be automatically replaced.
 
+Once installed properly, it will check once a day if it needs to be updated and will prompt you.
+
