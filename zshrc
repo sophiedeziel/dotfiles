@@ -43,11 +43,9 @@ aheadof() {
 
 export GPG_TTY=$(tty)
 
-source ~/.bash/path-stuff.sh
+for f in ~/.bash/*; do source $f; done
 
 source ~/.secrets
-
-source ~/.bash/aliases.sh
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
