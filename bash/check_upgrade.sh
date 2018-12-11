@@ -4,7 +4,7 @@ function _current_epoch() {
   echo $(( $EPOCHSECONDS / 60 / 60 / 24 ))
 }
 
-function _update_zsh_update() {
+function _update_last_update() {
   echo "LAST_EPOCH=$(_current_epoch)" >! ~/.dotfiles/.last_update
 }
 
@@ -13,7 +13,7 @@ epoch_target=2
 if [ -f  ~/.dotfiles/.last_update ]; then
   . ~/.dotfiles/.last_update
   if [[ -z "$LAST_EPOCH" ]]; then
-    _update_zsh_update
+    _update_last_update
   fi
 
   epoch_diff=$(($(_current_epoch) - $LAST_EPOCH))
@@ -26,13 +26,13 @@ if [ -f  ~/.dotfiles/.last_update ]; then
       if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
         git pull --rebase --stat origin master
         rake
-        _update_zsh_update
+        _update_last_update
       else
       fi
     fi
     cd - &> /dev/null
   fi
 else
-  _update_zsh_update
+  _update_last_update
 fi
 
