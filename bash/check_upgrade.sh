@@ -25,6 +25,7 @@ if [ -f  ~/.dotfiles/.last_update ]; then
       read line
       if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
         git pull --rebase --stat origin master
+        rake
         _update_zsh_update
       else
       fi
