@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="doubleend"
 
-plugins=(git ruby dotenv bundler)
+plugins=(lol git ruby dotenv bundler)
 
 source $ZSH/oh-my-zsh.sh
 
