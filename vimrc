@@ -21,11 +21,12 @@ Plug 'rking/ag.vim'
 
 " delight
 Plug 'Lokaltog/vim-easymotion'
-Plug 'vim-airline/vim-airline'
-Plug 'flazz/vim-colorschemes'
-Plug 'xolox/vim-colorscheme-switcher'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'djoshea/vim-autoread'
+Plug 'flazz/vim-colorschemes'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'xolox/vim-colorscheme-switcher'
+Plug 'zxqfl/tabnine-vim'
 
 " languages
 Plug 'wavded/vim-stylus'
@@ -49,7 +50,7 @@ Plug 'danchoi/ruby_bashrockets.vim'
 Plug 'tsaleh/vim-align'
 Plug 'tpope/vim-endwise'
 "Plug 'tpope/vim-surround'
-"Plug 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 
 " Git
 Plug 'xuyuanp/nerdtree-git-plugin'
