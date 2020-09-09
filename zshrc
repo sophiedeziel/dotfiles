@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim -f'
+  export EDITOR='vim'
 fi
 
 current_branch_name () {
@@ -47,8 +47,7 @@ for f in ~/.bash/*; do source $f; done
 
 source ~/.secrets
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+. $(brew --prefix asdf)/asdf.sh
 
 add-zsh-hook precmd source_env # to load on new tab too
 
@@ -60,3 +59,6 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi
+if [ -e /Users/sophiedeziel/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/sophiedeziel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installe

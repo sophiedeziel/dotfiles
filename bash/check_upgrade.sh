@@ -26,9 +26,9 @@ if [ -f  ~/.dotfiles/.last_update ]; then
       if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
         git pull --rebase --stat origin master
         rake
-        _update_last_update
       else
       fi
+      _update_last_update
     fi
     cd - &> /dev/null
   fi

@@ -26,7 +26,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'xolox/vim-colorscheme-switcher'
-Plug 'zxqfl/tabnine-vim'
 
 " languages
 Plug 'wavded/vim-stylus'
