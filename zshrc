@@ -14,32 +14,9 @@ else
   export EDITOR='vim'
 fi
 
-current_branch_name () {
-  current_branch
-}
-
-current_branch_number () {
-  current_branch_name | sed 's/[^0-9]*_.*//'
-}
-
 # thefuck
 eval "$(thefuck --alias)"
 alias sti='thefuck'
-
-aheadof() {
-  default_remote='production'
-
-  remote=${1-$default_remote}
-  branch="$(current_branch_name)"
-
-  fetch="$(git fetch $remote)"
-
-  ahead="$(git rev-list $remote/$branch..$branch --count)"
-
-  echo "$ahead commits ahead of $remote/$branch"
-
-  git log -n $ahead
-}
 
 export GPG_TTY=$(tty)
 
@@ -61,4 +38,10 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 if [[ -f /opt/dev/dev.sh ]]; then source /opt/dev/dev.sh; fi
-if [ -e /Users/sophiedeziel/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/sophiedeziel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installe
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix install
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+
+function spindb() {
+    open "mysql://root@$(spin info fqdn):3306"
+}
