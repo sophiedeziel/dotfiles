@@ -2,8 +2,8 @@
 
 zmodload zsh/datetime
 
-export DOTFILES_PATH=~/.dotfiles
-export LAST_UPDATE_FILE="$DOTFILES_PATH/.last_update"
+DOTFILES_PATH=~/.dotfiles
+LAST_UPDATE_FILE=$DOTFILES_PATH/.last_update
 
 function _current_epoch() {
   echo $(( $EPOCHSECONDS / 60 / 60 / 24 ))
