@@ -1,4 +1,8 @@
-#!/usr/bin/bash
+if [ -f ~/.dotfiles ]; then 
+  cd ~/.dotfiles
+elif [ -f ~/dotfiles ]; then 
+  cd ~/.dotfiles
+fi
 
 if [ -f ~/.oh-my-zsh ]; then 
   echo "Installing Oh-My-Zsh"
