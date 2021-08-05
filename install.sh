@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 if [ -f ~/.oh-my-zsh ]; then 
   echo "Installing Oh-My-Zsh"
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -20,3 +22,16 @@ echo "Create symlinks"
 yes | rake
 
 source ~/.zshrc
+
+# Spin related auto-install
+
+if [[ "$SPIN" = 1 ]]
+then
+  # Only run nested steps in Spin + shopify/shopify workspaces.
+  if [[ "$SPIN_REPO_SOURCE_PATH" = "/src/github.com/shopify/shopify" ]]
+  then
+    cd "$SPIN_REPO_SOURCE_PATH"
+
+    . /cartridges/default/setup.sh
+  fi
+fi
