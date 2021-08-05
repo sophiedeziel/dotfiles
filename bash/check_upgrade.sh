@@ -1,3 +1,5 @@
+#!/bin/sh
+
 zmodload zsh/datetime
 
 export DOTFILES_PATH=~/.dotfiles
