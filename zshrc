@@ -22,7 +22,7 @@ export GPG_TTY=$(tty)
 
 for f in ~/.bash/*; do source $f; done
 
-source ~/.secrets
+if [[ -f ~/.secrets ]]; then source ~/.secrets; fi
 
 . $(brew --prefix asdf)/asdf.sh
 
