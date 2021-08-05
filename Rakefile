@@ -6,6 +6,7 @@ DO_NOT_SYMLINK = %w[
   extras
   Rakefile
   README.md
+  zsh-themes
 ]
 
 
@@ -50,6 +51,12 @@ task :install do
     FileUtils.ln_s(source, target)
     info "Creating symlink: #{target} --> #{source}"
   end
+
+  target = File.expand_path("~/.oh-my-zsh/themes/doubleend.zsh-theme")
+  source = File.join(Dir.pwd, "zsh-themes/doubleend.zsh-theme")
+  FileUtils.rm_rf(target)
+  FileUtils.ln_s(source, target)
+    info "Creating symlink: #{target} --> #{source}"
 
   system "git submodule update --init"
 end
