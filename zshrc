@@ -24,7 +24,9 @@ for f in ~/.bash/*; do source $f; done
 
 if [[ -f ~/.secrets ]]; then source ~/.secrets; fi
 
-. $(brew --prefix asdf)/asdf.sh
+if type "brew" > /dev/null; then
+  . $(brew --prefix asdf)/asdf.sh
+fi
 
 add-zsh-hook precmd source_env # to load on new tab too
 
