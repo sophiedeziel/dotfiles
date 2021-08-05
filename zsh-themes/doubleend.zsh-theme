@@ -41,14 +41,23 @@ function put_spacing() {
   echo $spacing
 }
 
+function user() {
+  if [ "`whoami`" != "sophiedeziel" ]; then
+    echo "🌎 $fg[magenta]`whoami`"
+  else
+    echo "💻 $fg[cyan]`whoami`"
+  fi
+}
+
+
 function precmd() {
 print -rP '
-$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info) $(battery_charge)'
+$fg[cyan]$(user): $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info) $(battery_charge)'
 }
 
 PROMPT='%{$reset_color%}→ '
 
-ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
-ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
+ZSH_THEME_GIT_PROMPT_PREFIX="[ git: "
+ZSH_THEME_GIT_PROMPT_SUFFIX=" ]$reset_color"
 ZSH_THEME_GIT_PROMPT_DIRTY="$fg[red]+"
 ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]"
