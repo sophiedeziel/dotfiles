@@ -1,8 +1,15 @@
 #!/bin/sh
 
+if [[ -d ~/.dotfiles ]]; then 
+  DOTFILES_PATH=~/.dotfiles
+elif [[ -d ~/dotfiles ]]; then 
+  DOTFILES_PATH=~/dotfiles
+fi
+
+
 zmodload zsh/datetime
 
-DOTFILES_PATH=~/.dotfiles
+
 LAST_UPDATE_FILE=$DOTFILES_PATH/.last_update
 
 function _current_epoch() {
