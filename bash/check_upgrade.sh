@@ -8,7 +8,7 @@ function _current_epoch() {
 }
 
 function _update_last_update() {
-  echo "LAST_EPOCH=$(_current_epoch)" >! $LAST_UPDATE_FILE
+  echo "LAST_EPOCH=$(_current_epoch)" > $LAST_UPDATE_FILE
 }
 
 epoch_target=2
