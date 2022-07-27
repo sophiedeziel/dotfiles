@@ -14,13 +14,12 @@ else
   export EDITOR='vim'
 fi
 
-# thefuck
-eval "$(thefuck --alias)"
-alias sti='thefuck'
-
 export GPG_TTY=$(tty)
 
 for f in ~/.bash/*; do source $f; done
+
+# thefuck
+eval "$(thefuck --alias)"
 
 if [[ -f ~/.secrets ]]; then source ~/.secrets; fi
 
