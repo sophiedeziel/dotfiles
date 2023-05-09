@@ -4,27 +4,30 @@ elif [ -d ~/dotfiles ]; then
   cd ~/dotfiles
 fi
 
-if ! [ -d ~/.vim ]; then
-  echo "Installing Plug for vim"
-  yes | curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-if ! [ -d ~/.oh-my-zsh ]; then
-  echo "Installing Oh-My-Zsh"
-  yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
-if ! type "fuck" > /dev/null; then
-  echo "Installing The Fuck"
-  if type "apt" > /dev/null; then
-    yes | sudo apt update
-    yes | sudo apt install python3-dev python3-pip python3-setuptools
-    yes | pip3 install thefuck --user
+if ! [[ "$SPIN" = 1 ]]
+then
+  if ! [ -d ~/.vim ]; then
+    echo "Installing Plug for vim"
+    yes | curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
 
-  if type "brew" > /dev/null; then
-    yes | brew install thefuck
+  if ! [ -d ~/.oh-my-zsh ]; then
+    echo "Installing Oh-My-Zsh"
+    yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  fi
+
+  if ! type "fuck" > /dev/null; then
+    echo "Installing The Fuck"
+    if type "apt" > /dev/null; then
+      yes | sudo apt update
+      yes | sudo apt install python3-dev python3-pip python3-setuptools
+      yes | pip3 install thefuck --user
+    fi
+
+    if type "brew" > /dev/null; then
+      yes | brew install thefuck
+    fi
   fi
 fi
 
@@ -34,8 +37,11 @@ yes | rake
 source ~/.zshrc
 
 # Install vim plugins after .vimrc is symliked
-echo "Installing vim plugins"
-vim -es -u vimrc -i NONE -c "PlugInstall" -c "qa"
+if ! [[ "$SPIN" = 1 ]]
+then
+  echo "Installing vim plugins"
+  vim -es -u vimrc -i NONE -c "PlugInstall" -c "qa"
+fi
 
 # Spin related auto-install
 
