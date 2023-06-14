@@ -8,11 +8,11 @@ plugins=(lol git ruby dotenv bundler)
 source $ZSH/oh-my-zsh.sh
 
 #Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='vim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='vim'
+# fi
 
 export GPG_TTY=$(tty)
 
