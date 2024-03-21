@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [[ -d ~/.dotfiles ]]; then 
+if [[ -d ~/.dotfiles ]]; then
   DOTFILES_PATH=~/.dotfiles
-elif [[ -d ~/dotfiles ]]; then 
+elif [[ -d ~/dotfiles ]]; then
   DOTFILES_PATH=~/dotfiles
 fi
 
@@ -20,7 +20,7 @@ function _update_last_update() {
   echo "LAST_EPOCH=$(_current_epoch)" > $LAST_UPDATE_FILE
 }
 
-epoch_target=2
+epoch_target=4
 
 if [ -f  $LAST_UPDATE_FILE ]; then
   . $LAST_UPDATE_FILE
