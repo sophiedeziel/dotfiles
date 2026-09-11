@@ -45,4 +45,4 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 
 
 # Added by tec agent
-[[ -x /Users/sophiedeziel/.local/state/tec/profiles/base/current/global/init ]] && eval "$(/Users/sophiedeziel/.local/state/tec/profiles/base/current/global/init zsh)"
+[[ -x "$HOME/.local/state/tec/profiles/base/current/global/init" ]] && eval "$("$HOME/.local/state/tec/profiles/base/current/global/init" zsh)"
