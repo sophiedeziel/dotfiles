@@ -43,3 +43,6 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
 
+
+# Added by tec agent
+[[ -x /Users/sophiedeziel/.local/state/tec/profiles/base/current/global/init ]] && eval "$(/Users/sophiedeziel/.local/state/tec/profiles/base/current/global/init zsh)"
