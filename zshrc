@@ -19,12 +19,15 @@ export GPG_TTY=$(tty)
 for f in ~/.bash/*; do source $f; done
 
 # thefuck
-eval "$(thefuck --alias)"
+if type "thefuck" > /dev/null 2>&1; then
+  eval "$(thefuck --alias)"
+fi
 
 if [[ -f ~/.secrets ]]; then source ~/.secrets; fi
 
-if type "brew" > /dev/null; then
-  . $(brew --prefix asdf)/asdf.sh
+if type "brew" > /dev/null 2>&1; then
+  asdf_sh="$(brew --prefix asdf)/asdf.sh"
+  [[ -f "$asdf_sh" ]] && . "$asdf_sh"
 fi
 
 add-zsh-hook precmd source_env # to load on new tab too
