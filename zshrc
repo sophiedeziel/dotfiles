@@ -24,6 +24,7 @@ if type "thefuck" > /dev/null 2>&1; then
 fi
 
 if [[ -f ~/.secrets ]]; then source ~/.secrets; fi
+if [[ -f ~/.local-aliases ]]; then source ~/.local-aliases; fi
 
 if type "brew" > /dev/null 2>&1; then
   asdf_sh="$(brew --prefix asdf)/asdf.sh"

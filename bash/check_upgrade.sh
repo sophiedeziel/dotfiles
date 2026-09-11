@@ -31,12 +31,12 @@ if [ -f  $LAST_UPDATE_FILE ]; then
   epoch_diff=$(($(_current_epoch) - $LAST_EPOCH))
   if [ $epoch_diff -gt $epoch_target ]; then
     cd $DOTFILES_PATH &> /dev/null
-    if git fetch origin master --quiet && [ `git rev-list HEAD...origin/master --count` != 0 ]
+    if git fetch origin main --quiet && [ `git rev-list HEAD...origin/main --count` != 0 ]
     then
       echo "[Dotfiles] Would you like to update? [Y/n]: \c"
       read line
       if [[ "$line" == Y* ]] || [[ "$line" == y* ]] || [ -z "$line" ]; then
-        git pull --rebase --stat origin master
+        git pull --rebase --stat origin main
         rake
       else
       fi
